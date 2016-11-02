@@ -83,29 +83,59 @@ describe('Dashboard', function() {
       }))
     })
 
-    it('registerSearch', function() {
-      const action = registerSearch('search2')
-      const nextState = reducer(state, action)
+    describe('registerSearch', function() {
+      it('a new searchId should create a new map', function() {
+        const action = registerSearch('search2')
+        const nextState = reducer(state, action)
 
-      expect(nextState).to.equal(fromJS({
-        search1: {
-          searchText: '',
-          page: 0,
-          sort: 'nome.asc',
-          filter: {},
-          results: {},
-          pageSize: 10,
-        },
-        search2: {
-          searchText: '',
-          page: 0,
-          sort: 'nome.asc',
-          filter: {},
-          results: {},
-          pageSize: 10,
-        }
-      }))
+        expect(nextState).to.equal(fromJS({
+          search1: {
+            searchText: '',
+            page: 0,
+            sort: 'nome.asc',
+            filter: {},
+            results: {},
+            pageSize: 10,
+          },
+          search2: {
+            searchText: '',
+            page: 0,
+            sort: 'nome.asc',
+            filter: {},
+            results: {},
+            pageSize: 10,
+          }
+        }))
+      })
+
+      it('an existing searchId should be preserved', function() {
+        const action = registerSearch('search1')
+        const state = fromJS({
+          search1: {
+            searchText: 'teste',
+            page: 0,
+            sort: 'nome.asc',
+            filter: {},
+            results: {},
+            pageSize: 10,
+          }
+        })
+
+        const nextState = reducer(state, action)
+
+        expect(nextState).to.equal(fromJS({
+          search1: {
+            searchText: 'teste',
+            page: 0,
+            sort: 'nome.asc',
+            filter: {},
+            results: {},
+            pageSize: 10,
+          }
+        }))
+      })
     })
+
 
 
     it('setFilter', function() {

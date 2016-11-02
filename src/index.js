@@ -118,6 +118,9 @@ export default (state = initialState, action) => {
     case SET_PAGE_SIZE:
       return state.setIn([searchId, 'pageSize'], action.payload.pageSize)
     case REGISTER_SEARCH:
+      if (state.get(searchId)) {
+        return state
+      }
       return state.set(searchId, fromJS(action.payload.initialState || searchShape))
     default:
       return state
