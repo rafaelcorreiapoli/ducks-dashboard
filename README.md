@@ -1,2 +1,2 @@
 # Ducks: Dashboard
-[![Build Status](https://travis-ci.org/rafaelcorreiapoli/skybiometry-login.svg?branch=master)](https://travis-ci.org/rafaelcorreiapoli/skybiometry-login) [![Coverage Status](https://coveralls.io/repos/github/rafaelcorreiapoli/skybiometry-login/badge.svg?branch=master)](https://coveralls.io/github/rafaelcorreiapoli/skybiometry-login?branch=master)
+[![Build Status](https://travis-ci.org/rafaelcorreiapoli/ducks-dashboard.svg?branch=master)](https://travis-ci.org/rafaelcorreiapoli/ducks-dashboard) [![Coverage Status](https://coveralls.io/repos/github/rafaelcorreiapoli/ducks-dashboard/badge.svg)](https://coveralls.io/github/rafaelcorreiapoli/ducks-dashboard)
